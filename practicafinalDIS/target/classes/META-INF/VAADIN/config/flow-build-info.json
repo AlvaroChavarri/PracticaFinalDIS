@@ -1,0 +1,9 @@
+{
+  "compatibilityMode": false,
+  "productionMode": false,
+  "npmFolder": "/Users/roig/OneDrive/Gitproyects/practicafinalDIS/practicafinalDIS",
+  "generatedFolder": "/Users/roig/OneDrive/Gitproyects/practicafinalDIS/practicafinalDIS/target/frontend",
+  "frontendFolder": "/Users/roig/OneDrive/Gitproyects/practicafinalDIS/practicafinalDIS/frontend",
+  "pnpm.enable": false,
+  "require.home.node": false
+}
