@@ -15,7 +15,7 @@ public class Pelicula {
     private String estreno;
     private String duracion;
     private String enlace;
-    public Pelicula(String titulo, String sinopsis, String genero, String enlace,String duracion,String estreno,String id){
+    public Pelicula(String titulo, String sinopsis, String genero, String enlace,String duracion,String estreno){
         this.titulo=titulo;
         this.sinopsis=sinopsis;
         this.genero=genero;
