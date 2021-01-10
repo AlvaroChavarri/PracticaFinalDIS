@@ -1,4 +1,4 @@
-package pkVadin;
+package back;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Pelicula {
     @Id
     @GeneratedValue
-    private long id;
+    private int id;
     private String titulo;
     private String sinopsis;
     private String genero;
@@ -27,7 +27,9 @@ public class Pelicula {
     public Pelicula() {
 
     }
-
+    public int getId() {
+        return id;
+    }
     public String getTitulo() {
         return titulo;
     }
