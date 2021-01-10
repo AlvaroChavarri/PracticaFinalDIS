@@ -46,7 +46,6 @@
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-spring-boot-starter:3.1.1" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-spring-boot:3.1.1" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-spring:3.1.1" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.3.7.RELEASE" />
@@ -91,6 +90,7 @@
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.4.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.3.2.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">
