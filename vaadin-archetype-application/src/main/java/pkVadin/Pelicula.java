@@ -5,19 +5,17 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 
 @Entity
-public class customer {
+public class Pelicula {
     @Id
     @GeneratedValue
     private long id;
-    private String pelicula;
     private String titulo;
     private String sinopsis;
     private String genero;
     private String estreno;
     private String duracion;
     private String enlace;
-    public customer(String pelicula, String titulo, String sinopsis, String genero, String enlace,String duracion,String estreno,String id){
-        this.pelicula=pelicula;
+    public Pelicula(String titulo, String sinopsis, String genero, String enlace,String duracion,String estreno,String id){
         this.titulo=titulo;
         this.sinopsis=sinopsis;
         this.genero=genero;
@@ -26,7 +24,7 @@ public class customer {
         this.duracion=duracion;
     }
 
-    public customer() {
+    public Pelicula() {
 
     }
 
