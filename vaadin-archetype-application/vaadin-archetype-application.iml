@@ -6,6 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
+          <factory-entry name="entityManagerFactory" />
           <factory-entry name="vaadin-archetype-application" value="eedb6f25-92b8-4c5d-b892-6131cb3091b7" />
         </datasource-mapping>
         <naming-strategy-map />

@@ -3,6 +3,7 @@ package back;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -12,7 +13,7 @@ public class PeliculaController {
     PeliculaService PeliculaService;
 
     @GetMapping("/Peliculas")
-    private List<Pelicula> getAllPeliculas() {
+    private List<Pelicula> getAllPeliculas() throws IOException {
         return PeliculaService.getAllPeliculas();
     }
 

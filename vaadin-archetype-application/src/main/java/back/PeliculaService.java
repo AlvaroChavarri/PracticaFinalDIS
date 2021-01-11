@@ -1,8 +1,12 @@
 package back;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +16,7 @@ public class PeliculaService {
     @Autowired
     PeliculaRepository PeliculaRepository;
 
-    public List<Pelicula> getAllPeliculas() {
+    public List<Pelicula> getAllPeliculas() throws IOException {
         List<Pelicula> Peliculas = new ArrayList<Pelicula>();
         PeliculaRepository.findAll().forEach(Pelicula -> Peliculas.add(Pelicula));
         return Peliculas;
