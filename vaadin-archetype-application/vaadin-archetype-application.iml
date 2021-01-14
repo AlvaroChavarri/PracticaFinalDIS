@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="web" name="Web">
+    <facet type="gwt" name="GWT">
       <configuration>
-        <webroots />
-        <sourceRoots />
+        <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
-    <facet type="Spring" name="Spring">
-      <configuration />
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping />
+        <naming-strategy-map />
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -23,6 +27,7 @@
     <content url="file://$MODULE_DIR$/node_modules" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin:14.4.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:vaadin-core:14.4.5" level="project" />
     <orderEntry type="library" name="Maven: com.vaadin:flow-server:2.4.4" level="project" />
