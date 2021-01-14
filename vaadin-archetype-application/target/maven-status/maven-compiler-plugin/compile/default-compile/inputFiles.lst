@@ -1,2 +1,11 @@
-/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/pkVadin/VaadinArchetypeApplication.java
-/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/pkVadin/MyUI.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/data/generator/DataGenerator.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/views/biblioteca/Client.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/views/biblioteca/BibliotecaView.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/data/AbstractEntity.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/views/main/MainView.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/data/entity/Person.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/Application.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/views/editarpelicula/EditarPeliculaView.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/data/service/PersonService.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/views/formulario/FormularioView.java
+/Users/juanlatasareinoso/Desktop/PR2/PracticaFinalDIS/vaadin-archetype-application/src/main/java/vaadinarchetypeapplication/data/service/PersonRepository.java

@@ -1,52 +1,57 @@
-vaadin-archetype-application
-==============
+# vaadin-archetype-application
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
+This is an example project that can be used as a starting point to create your own Vaadin application with Spring Boot.
+It contains all the necessary configuration and some placeholder files to get you started.
 
+The project is a standard Maven project, so you can import it to your IDE of choice. [Read more how to set up a development environment](https://vaadin.com/docs/v14/flow/installing/installing-overview.html) for Vaadin projects (Windows, Linux, macOS). 
 
-Workflow
-========
+This project was created from https://start.vaadin.com.
 
-To compile the entire project, run "mvn install".
+## Running and debugging the applcation
 
-To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
+### Running the application from the command line.
+To run from the command line, use `mvn` and open http://localhost:8080 in your browser.
 
-To produce a deployable production mode WAR:
-- change productionMode to true in the servlet class configuration (nested in the UI class)
-- run "mvn clean package"
-- test the war file with "mvn jetty:run-war"
+### Running and debugging the application in Intellij IDEA
+- Locate the Application.java class in the Project view. It is in the src folder, under the main package's root.
+- Right click on the Application class
+- Select "Debug 'Application.main()'" from the list
 
-Client-Side compilation
--------------------------
+After the application has started, you can view your it at http://localhost:8080/ in your browser. 
+You can now also attach break points in code for debugging purposes, by clicking next to a line number in any source file.
 
-The generated maven project is using an automatically generated widgetset by default. 
-When you add a dependency that needs client-side compilation, the maven plugin will 
-automatically generate it for you. Your own client-side customizations can be added into
-package "client".
+### Running and debugging the application in Eclipse
+- Locate the Application.java class in the Package explorer. It is in `src/main/java`, under the main package.
+- Right click on the file and select `Debug As` --> `Java Application`.
 
-Debugging client side code
-  - run "mvn vaadin:run-codeserver" on a separate console while the application is running
-  - activate Super Dev Mode in the debug window of the application
+Do not worry if the debugger breaks at a `SilentExitException`. This is a Spring Boot feature and happens on every startup.
 
-Developing a theme using the runtime compiler
--------------------------
+After the application has started, you can view your it at http://localhost:8080/ in your browser.
+You can now also attach break points in code for debugging purposes, by clicking next to a line number in any source file.
+## Project structure
 
-When developing the theme, Vaadin can be configured to compile the SASS based
-theme at runtime in the server. This way you can just modify the scss files in
-your IDE and reload the browser to see changes.
+- `MainView.java` in `src/main/java` contains the navigation setup. It uses [App Layout](https://vaadin.com/components/vaadin-app-layout).
+- `views` package in `src/main/java` contains the server-side Java views of your application.
+- `views` folder in `frontend/src/` contains the client-side JavaScript views of your application.
 
-To use the runtime compilation, open pom.xml and comment out the compile-theme 
-goal from vaadin-maven-plugin configuration. To remove a possibly existing 
-pre-compiled theme, run "mvn clean package" once.
+## What next?
 
-When using the runtime compiler, running the application in the "run" mode 
-(rather than in "debug" mode) can speed up consecutive theme compilations
-significantly.
+[vaadin.com](https://vaadin.com) has lots of material to help you get you started:
 
-It is highly recommended to disable runtime compilation for production WAR files.
+- Follow the tutorials in [vaadin.com/tutorials](https://vaadin.com/tutorials). Especially [vaadin.com/tutorials/getting-started-with-flow](https://vaadin.com/tutorials/getting-started-with-flow) is good for getting a grasp of the basic Vaadin concepts.
+- Read the documentation in [vaadin.com/docs](https://vaadin.com/docs).
+- For a bigger Vaadin application example, check out the Full Stack App starter from [vaadin.com/start](https://vaadin.com/start).
 
-Using Vaadin pre-releases
--------------------------
+## Deploying using Docker
 
-If Vaadin pre-releases are not enabled by default, use the Maven parameter
-"-P vaadin-prerelease" or change the activation default value of the profile in pom.xml .
+To build the Dockerized version of the project, run
+
+```
+docker build . -t myapp:latest
+```
+
+Once the Docker image is correctly built, you can test it locally using
+
+```
+docker run -p 8080:8080 myapp:latest
+```
