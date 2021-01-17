@@ -1,6 +1,5 @@
 import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-
 import '@vaadin/vaadin-combo-box/vaadin-combo-box';
 import '@vaadin/vaadin-date-picker/vaadin-date-picker';
 import '@vaadin/vaadin-grid/all-imports';
@@ -12,7 +11,7 @@ import '@vaadin/vaadin-text-field/vaadin-text-field';
 class BibliotecaView extends PolymerElement {
   static get template() {
     return html`
-      <style include="shared-styles lumo-badge lumo-typography">
+<style include="shared-styles lumo-badge lumo-typography">
         :host {
           display: block;
           height: 100%;
@@ -37,45 +36,44 @@ class BibliotecaView extends PolymerElement {
           text-overflow: ellipsis;
         }
       </style>
-
-      <vaadin-grid-pro id="grid" theme="no-border column-borders" items="[[items]]">
-        <vaadin-grid-selection-column auto-select></vaadin-grid-selection-column>
-        <vaadin-grid-column-group id="idColumnGroup">
-          <vaadin-grid-column id="idColumn" flex-grow="0" path="id" width="120px"></vaadin-grid-column>
-        </vaadin-grid-column-group>
-        <vaadin-grid-column-group id="clientColumnGroup">
-          <vaadin-grid-column id="clientColumn" path="client">
-            <template>
-              <vaadin-horizontal-layout theme="spacing">
-                <img src="[[item.img]]" />
-                <span class="name">[[item.client]]</span>
-              </vaadin-horizontal-layout>
-            </template>
-          </vaadin-grid-column>
-        </vaadin-grid-column-group>
-        <vaadin-grid-column-group id="amountColumnGroup">
-          <vaadin-grid-pro-edit-column id="amountColumn" path="amount">
-            <template>
-              <span>[[_getAmount(item.amount)]]</span>
-            </template>
-          </vaadin-grid-pro-edit-column>
-        </vaadin-grid-column-group>
-        <vaadin-grid-column-group id="statusColumnGroup">
-          <vaadin-grid-pro-edit-column id="statusColumn" editor-type="select" path="status">
-            <template>
-              <span theme$="[[_getTheme(item.status)]]">[[item.status]]</span>
-            </template>
-          </vaadin-grid-pro-edit-column>
-        </vaadin-grid-column-group>
-        <vaadin-grid-column-group id="dateColumnGroup">
-          <vaadin-grid-column id="dateColumn" flex-grow="0" path="date" width="180px">
-            <template>
-              <span>[[_getDate(item.date)]]</span>
-            </template>
-          </vaadin-grid-column>
-        </vaadin-grid-column-group>
-      </vaadin-grid-pro>
-    `;
+<vaadin-grid-pro id="grid" theme="no-border column-borders" items="[[items]]">
+ <vaadin-grid-selection-column auto-select></vaadin-grid-selection-column>
+ <vaadin-grid-column-group id="idColumnGroup">
+  <vaadin-grid-column id="idColumn" flex-grow="0" path="id" width="120px"></vaadin-grid-column>
+ </vaadin-grid-column-group>
+ <vaadin-grid-column-group id="clientColumnGroup">
+  <vaadin-grid-column id="clientColumn" path="client">
+   <template>
+    <vaadin-horizontal-layout theme="spacing">
+     <img src="[[item.img]]">
+     <span class="name">[[item.client]]</span>
+    </vaadin-horizontal-layout>
+   </template>
+  </vaadin-grid-column>
+ </vaadin-grid-column-group>
+ <vaadin-grid-column-group id="amountColumnGroup">
+  <vaadin-grid-pro-edit-column id="amountColumn" path="amount">
+   <template>
+    <span>[[_getAmount(item.amount)]]</span>
+   </template>
+  </vaadin-grid-pro-edit-column>
+ </vaadin-grid-column-group>
+ <vaadin-grid-column-group id="statusColumnGroup">
+  <vaadin-grid-pro-edit-column id="statusColumn" editor-type="select" path="status">
+   <template>
+    <span theme$="[[_getTheme(item.status)]]">[[item.status]]</span>
+   </template>
+  </vaadin-grid-pro-edit-column>
+ </vaadin-grid-column-group>
+ <vaadin-grid-column-group id="dateColumnGroup">
+  <vaadin-grid-column id="dateColumn" flex-grow="0" path="date" width="180px">
+   <template>
+    <span>[[_getDate(item.date)]]</span>
+   </template>
+  </vaadin-grid-column>
+ </vaadin-grid-column-group>Text
+</vaadin-grid-pro>
+`;
   }
 
   ready() {

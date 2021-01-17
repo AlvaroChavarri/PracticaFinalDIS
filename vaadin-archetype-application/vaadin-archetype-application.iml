@@ -400,4 +400,8 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.18" level="project" />
     <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
   </component>
+  <component name="designer2.settings">
+    <option name="serverIp" value="192.168.1.43" />
+    <option name="serverPort" value="51332" />
+  </component>
 </module>

@@ -25,7 +25,7 @@ class FormularioView extends PolymerElement {
  <vaadin-text-field label="First name" id="firstName"></vaadin-text-field>
  <vaadin-text-field label="Last name" id="lastName"></vaadin-text-field>
  <vaadin-date-picker id="birthday" label="Birthday"></vaadin-date-picker>
- <vaadin-custom-field id="phoneNumber" label="Phone number">
+ <vaadin-custom-field id="phoneNumber" label="Phone number" value="	">
   <vaadin-horizontal-layout theme="spacing">
    <vaadin-combo-box id="pnCountryCode" style="width: 120px;" pattern="\\+\\d*" placeholder="Country" prevent-invalid-input></vaadin-combo-box>
    <vaadin-text-field id="pnNumber" style="flex-grow: 1;" pattern="\\d*" prevent-invalid-input></vaadin-text-field>
