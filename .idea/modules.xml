@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PracticaFinalDIS.iml" filepath="$PROJECT_DIR$/.idea/PracticaFinalDIS.iml" />
       <module fileurl="file://$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application.iml" filepath="$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application (1).iml" filepath="$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application (2).iml" filepath="$PROJECT_DIR$/vaadin-archetype-application/vaadin-archetype-application (2).iml" />
     </modules>
   </component>
