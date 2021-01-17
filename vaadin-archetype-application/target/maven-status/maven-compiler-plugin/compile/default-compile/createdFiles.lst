@@ -12,5 +12,4 @@ vaadinarchetypeapplication\data\service\PersonService.class
 vaadinarchetypeapplication\data\entity\Film.class
 vaadinarchetypeapplication\views\biblioteca\BibliotecaView$BibliotecaViewModel.class
 vaadinarchetypeapplication\data\AbstractEntity.class
-vaadinarchetypeapplication\data\generator\DataGenerator.class
 vaadinarchetypeapplication\views\editarpelicula\EditarPeliculaView.class

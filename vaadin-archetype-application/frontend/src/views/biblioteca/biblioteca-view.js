@@ -94,11 +94,11 @@ class BibliotecaView extends PolymerElement {
     };
 
     this.$.clientColumnGroup.headerRenderer = (root) => {
-      root.innerHTML = '<vaadin-grid-sorter path="client">Client</vaadin-grid-sorter>';
+      root.innerHTML = '<vaadin-grid-sorter path="client">Titulo</vaadin-grid-sorter>';
     };
 
     this.$.amountColumnGroup.headerRenderer = (root) => {
-      root.innerHTML = '<vaadin-grid-sorter path="amount">Amount</vaadin-grid-sorter>';
+      root.innerHTML = '<vaadin-grid-sorter path="amount">Sinopsis</vaadin-grid-sorter>';
     };
 
     this.$.statusColumnGroup.headerRenderer = (root) => {
@@ -106,7 +106,7 @@ class BibliotecaView extends PolymerElement {
     };
 
     this.$.dateColumnGroup.headerRenderer = (root) => {
-      root.innerHTML = '<vaadin-grid-sorter path="date">Date</vaadin-grid-sorter>';
+      root.innerHTML = '<vaadin-grid-sorter path="date">Estreno</vaadin-grid-sorter>';
     };
 
     /* Column filters */
