@@ -1,7 +1,8 @@
 package vaadinarchetypeapplication.views.formulario;
 
-import vaadinarchetypeapplication.data.entity.Person;
-import vaadinarchetypeapplication.data.service.PersonService;
+
+import vaadinarchetypeapplication.data.entity.Film;
+import vaadinarchetypeapplication.data.service.FilmService;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -34,88 +35,41 @@ import com.vaadin.flow.component.Component;
 @Tag("formulario-view")
 public class FormularioView extends PolymerTemplate<TemplateModel> {
 
-    @Id("firstName")
-    private TextField firstName;
-    @Id("lastName")
-    private TextField lastName;
-    @Id("email")
-    private EmailField email;
-    @Id("occupation")
-    private TextField occupation;
-    @Id("birthday")
-    private DatePicker dateOfBirth;
-    @Id("pnCountryCode")
-    private ComboBox<String> countryCode;
-    @Id("pnNumber")
-    private TextField number;
-    @Id("phoneNumber")
-    private PhoneNumberField phone;
+    @Id("titulo")
+    private TextField titulo;
+    @Id("sinopsis")
+    private TextField sinopsis;
+    @Id("genero")
+    private TextField genero;
+    @Id("enlace")
+    private TextField enlace;
+    @Id("estreno")
+    private DatePicker estreno;
+    @Id("duracion")
+    private TextField duracion;
 
     @Id("save")
     private Button save;
     @Id("cancel")
     private Button cancel;
 
-    private Binder<Person> binder = new Binder(Person.class);
+    private Binder<Film> binder = new Binder(Film.class);
 
-    public FormularioView(PersonService personService) {
-        countryCode.setItems("+354", "+91", "+62", "+98", "+964", "+353", "+44", "+972", "+39", "+225");
-        countryCode.addCustomValueSetListener(e -> countryCode.setValue(e.getDetail()));
-
-        phone.setForm(this);
+    public FormularioView(FilmService filmService) {
 
         binder.bindInstanceFields(this);
         clearForm();
 
         cancel.addClickListener(e -> clearForm());
         save.addClickListener(e -> {
-            personService.update(binder.getBean());
-            Notification.show("Person details stored.");
+            filmService.update(binder.getBean());
+            Notification.show("Film details stored.");
             clearForm();
         });
     }
 
     private void clearForm() {
-        binder.setBean(new Person());
-    }
-
-    private static class PhoneNumberField extends CustomField<String> {
-        private FormularioView form;
-
-        @Override
-        protected String generateModelValue() {
-            if (getCountryCode().getValue() != null && getNumber().getValue() != null) {
-                return getCountryCode().getValue() + " " + getNumber().getValue();
-            }
-            return "";
-        }
-
-        @Override
-        protected void setPresentationValue(String phoneNumber) {
-            String[] parts = phoneNumber != null ? phoneNumber.split(" ", 2) : new String[0];
-            if (parts.length == 1) {
-                getCountryCode().clear();
-                getNumber().setValue(parts[0]);
-            } else if (parts.length == 2) {
-                getCountryCode().setValue(parts[0]);
-                getNumber().setValue(parts[1]);
-            } else {
-                getCountryCode().clear();
-                getNumber().clear();
-            }
-        }
-
-        public void setForm(FormularioView form) {
-            this.form = form;
-        }
-
-        private TextField getNumber() {
-            return form.number;
-        }
-
-        private ComboBox<String> getCountryCode() {
-            return form.countryCode;
-        }
+        binder.setBean(new Film());
     }
 
 }

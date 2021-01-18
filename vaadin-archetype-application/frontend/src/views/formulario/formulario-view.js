@@ -22,17 +22,12 @@ class FormularioView extends PolymerElement {
 </style>
 <h3>Introduce Pelicula</h3>
 <vaadin-form-layout style="width: 100%;">
- <vaadin-text-field label="Titulo" id="firstName"></vaadin-text-field>
- <vaadin-text-field label="Sinopsis" id="lastName"></vaadin-text-field>
- <vaadin-date-picker id="birthday" label="Estreno"></vaadin-date-picker>
- <vaadin-custom-field id="phoneNumber" label="Duracion">
-  <vaadin-horizontal-layout theme="spacing">
-   <vaadin-combo-box id="pnCountryCode" style="width: 120px;" pattern="\\+\\d*" placeholder="Country" prevent-invalid-input></vaadin-combo-box>
-   <vaadin-text-field id="pnNumber" style="flex-grow: 1;" pattern="\\d*" prevent-invalid-input></vaadin-text-field>
-  </vaadin-horizontal-layout>
- </vaadin-custom-field>
- <vaadin-email-field id="email" label="Genero"></vaadin-email-field>
- <vaadin-text-field id="occupation" label="Enlace"></vaadin-text-field>
+ <vaadin-text-field label="Titulo" id="titulo"></vaadin-text-field>
+ <vaadin-text-field label="Sinopsis" id="sinopsis"></vaadin-text-field>
+ <vaadin-date-picker id="estreno" label="Estreno"></vaadin-date-picker>
+ <vaadin-text-field label="Duracion" id="duracion"></vaadin-text-field>
+ <vaadin-text-field id="genero" label="Genero"></vaadin-text-field>
+ <vaadin-text-field id="enlace" label="Enlace"></vaadin-text-field>
 </vaadin-form-layout>
 <vaadin-horizontal-layout style="margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-l);" theme="spacing">
  <vaadin-button theme="primary" id="save">

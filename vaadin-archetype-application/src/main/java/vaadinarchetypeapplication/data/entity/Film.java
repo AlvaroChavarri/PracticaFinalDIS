@@ -11,7 +11,7 @@ public class Film extends AbstractEntity {
     private String titulo;
     private String sinopsis;
     private String genero;
-    private String estreno;
+    private LocalDate estreno;
     private String duracion;
     private String enlace;
 
@@ -47,11 +47,10 @@ public class Film extends AbstractEntity {
         this.enlace = enlace;
     }
 
-    public String getEstreno() {
+    public LocalDate getEstreno() {
         return estreno;
     }
-
-    public void setEstreno(String estreno) {
+    public void setEstreno(LocalDate dateOfBirth) {
         this.estreno = estreno;
     }
 

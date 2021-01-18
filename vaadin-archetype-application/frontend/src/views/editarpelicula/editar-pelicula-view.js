@@ -26,9 +26,7 @@ class EditarPeliculaView extends PolymerElement {
         <div style="width:400px;display:flex;flex-direction:column;">
           <div style="padding:var(--lumo-space-l);flex-grow:1;">
             <vaadin-form-layout>
-              <vaadin-text-field label="Titulo" id="firstName"></vaadin-text-field><vaadin-text-field label="Sinopsis" id="lastName"></vaadin-text-field><vaadin-text-field label="Genero" id="email"></vaadin-text-field><vaadin-text-field label="Duracion" id="phone"></vaadin-text-field><vaadin-date-picker label="Estreno" id="dateOfBirth"></vaadin-date-picker><vaadin-text-field label="Enlace" id="occupation"></vaadin-text-field><vaadin-checkbox id="important" style="padding-top: var(--lumo-space-m);"
-            >Important</vaadin-checkbox
-          >
+              <vaadin-text-field label="Titulo" id="titulo"></vaadin-text-field><vaadin-text-field label="Sinopsis" id="sinopsis"></vaadin-text-field><vaadin-text-field label="Genero" id="genero"></vaadin-text-field><vaadin-text-field label="Duracion" id="duracion"></vaadin-text-field><vaadin-date-picker label="Estreno" id="estreno"></vaadin-date-picker><vaadin-text-field label="Enlace" id="enlace"></vaadin-text-field>
             </vaadin-form-layout>
           </div>
           <vaadin-horizontal-layout

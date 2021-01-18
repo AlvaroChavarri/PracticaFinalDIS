@@ -2,8 +2,8 @@ package vaadinarchetypeapplication.views.editarpelicula;
 
 import java.util.Optional;
 
-import vaadinarchetypeapplication.data.entity.Person;
-import vaadinarchetypeapplication.data.service.PersonService;
+import vaadinarchetypeapplication.data.entity.Film;
+import vaadinarchetypeapplication.data.service.FilmService;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
@@ -40,49 +40,43 @@ public class EditarPeliculaView extends PolymerTemplate<TemplateModel> {
     // The design can be easily edited by using Vaadin Designer
     // (vaadin.com/designer)
 
-    private Grid<Person> grid;
+    private Grid<Film> grid;
 
     @Id
-    private TextField firstName;
+    private TextField titulo;
     @Id
-    private TextField lastName;
+    private TextField sinopsis;
     @Id
-    private TextField email;
+    private TextField genero;
     @Id
-    private TextField phone;
+    private TextField duracion;
     @Id
-    private DatePicker dateOfBirth;
+    private DatePicker estreno;
     @Id
-    private TextField occupation;
-    @Id
-    private Checkbox important;
+    private TextField enlace;
 
     @Id
     private Button cancel;
     @Id
     private Button save;
 
-    private BeanValidationBinder<Person> binder;
+    private BeanValidationBinder<Film> binder;
 
-    private Person person;
+    private Film film;
 
-    public EditarPeliculaView(@Autowired PersonService personService) {
+    public EditarPeliculaView(@Autowired FilmService filmService) {
         setId("editar-pelicula-view");
 
         // Grid is created here so we can pass the class to the constructor
-        grid = new Grid<>(Person.class, false);
-        grid.addColumn("firstName").setAutoWidth(true);
-        grid.addColumn("lastName").setAutoWidth(true);
-        grid.addColumn("email").setAutoWidth(true);
-        grid.addColumn("phone").setAutoWidth(true);
-        grid.addColumn("dateOfBirth").setAutoWidth(true);
-        grid.addColumn("occupation").setAutoWidth(true);
-        TemplateRenderer<Person> importantRenderer = TemplateRenderer.<Person>of(
-                "<iron-icon hidden='[[!item.important]]' icon='vaadin:check' style='width: var(--lumo-icon-size-s); height: var(--lumo-icon-size-s); color: var(--lumo-primary-text-color);'></iron-icon><iron-icon hidden='[[item.important]]' icon='vaadin:minus' style='width: var(--lumo-icon-size-s); height: var(--lumo-icon-size-s); color: var(--lumo-disabled-text-color);'></iron-icon>")
-                .withProperty("important", Person::isImportant);
-        grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true);
+        grid = new Grid<>(Film.class, false);
+        grid.addColumn("titulo").setAutoWidth(true);
+        grid.addColumn("sinopsis").setAutoWidth(true);
+        grid.addColumn("genero").setAutoWidth(true);
+        grid.addColumn("duracion").setAutoWidth(true);
+        grid.addColumn("estreno").setAutoWidth(true);
+        grid.addColumn("enlace").setAutoWidth(true);
 
-        grid.setDataProvider(new CrudServiceDataProvider<>(personService));
+        grid.setDataProvider(new CrudServiceDataProvider<>(filmService));
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.setHeightFull();
         // Add to the `<slot name="grid">` defined in the template
@@ -92,10 +86,10 @@ public class EditarPeliculaView extends PolymerTemplate<TemplateModel> {
         // when a row is selected or deselected, populate form
         grid.asSingleSelect().addValueChangeListener(event -> {
             if (event.getValue() != null) {
-                Optional<Person> personFromBackend = personService.get(event.getValue().getId());
+                Optional<Film> filmFromBackend = filmService.get(event.getValue().getId());
                 // when a row is selected but the data is no longer available, refresh grid
-                if (personFromBackend.isPresent()) {
-                    populateForm(personFromBackend.get());
+                if (filmFromBackend.isPresent()) {
+                    populateForm(filmFromBackend.get());
                 } else {
                     refreshGrid();
                 }
@@ -105,7 +99,7 @@ public class EditarPeliculaView extends PolymerTemplate<TemplateModel> {
         });
 
         // Configure Form
-        binder = new BeanValidationBinder<>(Person.class);
+        binder = new BeanValidationBinder<>(Film.class);
 
         // Bind fields. This where you'd define e.g. validation rules
 
@@ -118,17 +112,17 @@ public class EditarPeliculaView extends PolymerTemplate<TemplateModel> {
 
         save.addClickListener(e -> {
             try {
-                if (this.person == null) {
-                    this.person = new Person();
+                if (this.film == null) {
+                    this.film = new Film();
                 }
-                binder.writeBean(this.person);
+                binder.writeBean(this.film);
 
-                personService.update(this.person);
+                filmService.update(this.film);
                 clearForm();
                 refreshGrid();
-                Notification.show("Person details stored.");
+                Notification.show("Film details stored.");
             } catch (ValidationException validationException) {
-                Notification.show("An exception happened while trying to store the person details.");
+                Notification.show("An exception happened while trying to store the film details.");
             }
         });
     }
@@ -142,9 +136,9 @@ public class EditarPeliculaView extends PolymerTemplate<TemplateModel> {
         populateForm(null);
     }
 
-    private void populateForm(Person value) {
-        this.person = value;
-        binder.readBean(this.person);
+    private void populateForm(Film value) {
+        this.film = value;
+        binder.readBean(this.film);
 
     }
 }

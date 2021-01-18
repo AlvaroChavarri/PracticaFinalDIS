@@ -1,14 +1,10 @@
 vaadinarchetypeapplication\Application.class
-vaadinarchetypeapplication\data\service\PersonRepository.class
 vaadinarchetypeapplication\views\biblioteca\Client.class
 vaadinarchetypeapplication\data\service\FilmRepository.class
 vaadinarchetypeapplication\views\formulario\FormularioView.class
 vaadinarchetypeapplication\data\service\FilmService.class
-vaadinarchetypeapplication\data\entity\Person.class
 vaadinarchetypeapplication\views\biblioteca\BibliotecaView.class
-vaadinarchetypeapplication\views\formulario\FormularioView$PhoneNumberField.class
 vaadinarchetypeapplication\views\main\MainView.class
-vaadinarchetypeapplication\data\service\PersonService.class
 vaadinarchetypeapplication\data\entity\Film.class
 vaadinarchetypeapplication\views\biblioteca\BibliotecaView$BibliotecaViewModel.class
 vaadinarchetypeapplication\data\AbstractEntity.class
