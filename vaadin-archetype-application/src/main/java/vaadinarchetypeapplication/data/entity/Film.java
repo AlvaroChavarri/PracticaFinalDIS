@@ -50,7 +50,7 @@ public class Film extends AbstractEntity {
     public LocalDate getEstreno() {
         return estreno;
     }
-    public void setEstreno(LocalDate dateOfBirth) {
+    public void setEstreno(LocalDate estreno) {
         this.estreno = estreno;
     }
 

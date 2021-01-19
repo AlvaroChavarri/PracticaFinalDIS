@@ -9,11 +9,13 @@
         <module name="vaadin-archetype-application (1)" />
         <module name="vaadin-archetype-application (2)" />
         <module name="vaadin-archetype-application" />
+        <module name="vaadin-archetype-application (1) (vaadinarchetypeapplication)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="vaadin-archetype-application" target="1.8" />
       <module name="vaadin-archetype-application (1)" target="1.8" />
+      <module name="vaadin-archetype-application (1) (vaadinarchetypeapplication)" target="1.8" />
       <module name="vaadin-archetype-application (2)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -21,6 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="vaadin-archetype-application" options="-parameters" />
       <module name="vaadin-archetype-application (1)" options="-parameters" />
+      <module name="vaadin-archetype-application (1) (vaadinarchetypeapplication)" options="-parameters" />
       <module name="vaadin-archetype-application (2)" options="-parameters" />
     </option>
   </component>

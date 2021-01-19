@@ -3,9 +3,8 @@ package vaadinarchetypeapplication.views.biblioteca;
 public class Client {
 
     private int id;
-    private String img;
     private String client;
-    private double amount;
+    private String amount;
     private String status;
     private String date;
 
@@ -17,14 +16,6 @@ public class Client {
         this.id = id;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
     public String getClient() {
         return client;
     }
@@ -33,11 +24,11 @@ public class Client {
         this.client = client;
     }
 
-    public double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
