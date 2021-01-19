@@ -1,73 +1,48 @@
 <?xml version='1.1' encoding='UTF-8'?>
-<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@2.22">
+<flow-definition plugin="workflow-job@2.40">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
   <properties>
-    <io.jenkins.blueocean.rest.impl.pipeline.credential.BlueOceanCredentialsProvider_-FolderPropertyImpl plugin="blueocean-pipeline-scm-api@1.24.3">
-      <domain plugin="credentials@2.3.14">
-        <name>blueocean-folder-credential-domain</name>
-        <description>Blue Ocean Folder Credentials domain</description>
-        <specifications/>
-      </domain>
-      <user>admin</user>
-      <id>github</id>
-    </io.jenkins.blueocean.rest.impl.pipeline.credential.BlueOceanCredentialsProvider_-FolderPropertyImpl>
+    <hudson.plugins.jira.JiraProjectProperty plugin="jira@3.1.3"/>
   </properties>
-  <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.6.3">
-    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-  </folderViews>
-  <healthMetrics/>
-  <icon class="jenkins.branch.MetadataActionFolderIcon" plugin="branch-api@2.6.3">
-    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-  </icon>
-  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder@6.15">
-    <pruneDeadBranches>true</pruneDeadBranches>
-    <daysToKeep>-1</daysToKeep>
-    <numToKeep>-1</numToKeep>
-  </orphanedItemStrategy>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.87">
+    <script>pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as &quot;M3&quot; and add it to the path.
+        maven &quot;M3&quot;
+    }
+
+    stages {
+        stage(&apos;Build&apos;) {
+            steps {
+                // Get some code from a GitHub repository
+                git &apos;https://github.com/AlvaroChavarri/PracticaFinalDIS&apos;
+
+                // Run Maven on a Unix agent.
+                sh &quot;mvn -Dmaven.test.failure.ignore=true clean package&quot;
+
+                // To run Maven on a Windows agent, use
+                // bat &quot;mvn -Dmaven.test.failure.ignore=true clean package&quot;
+                sh &quot;mvn&quot;
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit &apos;**/target/surefire-reports/TEST-*.xml&apos;
+                    archiveArtifacts &apos;target/*.jar&apos;
+                }
+            }
+        }
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
   <triggers/>
   <disabled>false</disabled>
-  <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api@2.6.3">
-    <data>
-      <jenkins.branch.BranchSource>
-        <source class="org.jenkinsci.plugins.github_branch_source.GitHubSCMSource" plugin="github-branch-source@2.9.3">
-          <id>blueocean</id>
-          <apiUri>https://api.github.com</apiUri>
-          <credentialsId>github</credentialsId>
-          <repoOwner>AlvaroChavarri</repoOwner>
-          <repository>PracticaFinalDIS</repository>
-          <traits>
-            <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
-              <strategyId>3</strategyId>
-            </org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
-            <org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
-              <strategyId>1</strategyId>
-              <trust class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustPermission"/>
-            </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
-            <org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
-              <strategyId>1</strategyId>
-            </org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
-            <jenkins.plugins.git.traits.CleanBeforeCheckoutTrait plugin="git@4.5.2">
-              <extension class="hudson.plugins.git.extensions.impl.CleanBeforeCheckout">
-                <deleteUntrackedNestedRepositories>false</deleteUntrackedNestedRepositories>
-              </extension>
-            </jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
-            <jenkins.plugins.git.traits.CleanAfterCheckoutTrait plugin="git@4.5.2">
-              <extension class="hudson.plugins.git.extensions.impl.CleanCheckout">
-                <deleteUntrackedNestedRepositories>false</deleteUntrackedNestedRepositories>
-              </extension>
-            </jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
-            <jenkins.plugins.git.traits.LocalBranchTrait plugin="git@4.5.2">
-              <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
-                <localBranch>**</localBranch>
-              </extension>
-            </jenkins.plugins.git.traits.LocalBranchTrait>
-          </traits>
-        </source>
-      </jenkins.branch.BranchSource>
-    </data>
-    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-  </sources>
-  <factory class="org.jenkinsci.plugins.workflow.multibranch.WorkflowBranchProjectFactory">
-    <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
-    <scriptPath>Jenkinsfile</scriptPath>
-  </factory>
-</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
+</flow-definition>

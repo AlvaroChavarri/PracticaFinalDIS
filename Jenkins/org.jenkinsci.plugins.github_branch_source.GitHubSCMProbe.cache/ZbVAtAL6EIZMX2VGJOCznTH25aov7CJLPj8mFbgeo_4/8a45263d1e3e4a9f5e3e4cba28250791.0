@@ -5,23 +5,22 @@ Authorization: Basic YWRtaW46ZWI4ZjIwYzlmMDE5ZTU1ZDZkYmY2NWE1YzZhMzExNGYyNTNlMzM
 Accept-Encoding: gzip
 HTTP/1.1 200 OK
 30
+Date: Tue, 19 Jan 2021 15:00:12 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
+Server: GitHub.com
+Status: 200 OK
+Cache-Control: private, max-age=60, s-maxage=60
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP
+ETag: W/"b57ae5cdeaec4edaa2aa7a07c959b9dc64fb20892e4fe702b12b28bc36fcd864"
+last-modified: Tue, 19 Jan 2021 14:59:41 GMT
 X-OAuth-Scopes: admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook, delete:packages, delete_repo, gist, notifications, repo, user, workflow, write:discussion, write:packages
 X-Accepted-OAuth-Scopes: repo
 X-GitHub-Media-Type: github.v3; format=json
-Content-Encoding: gzip
-Date: Tue, 19 Jan 2021 14:56:11 GMT
-Server: GitHub.com
-Status: 304 Not Modified
-Cache-Control: private, max-age=60, s-maxage=60
-Vary: Accept, Authorization, Cookie, X-GitHub-OTP
-ETag: "6f325dd066d64dd7ecb5f43190509d87e82fb4e8fd3f06185dd3d96d0cfe92fb"
-last-modified: Tue, 19 Jan 2021 13:01:45 GMT
 X-RateLimit-Limit: 5000
-X-RateLimit-Remaining: 4971
+X-RateLimit-Remaining: 4960
 X-RateLimit-Reset: 1611071518
-x-ratelimit-used: 29
+x-ratelimit-used: 40
 Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
 Access-Control-Allow-Origin: *
 Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
@@ -31,10 +30,11 @@ X-XSS-Protection: 1; mode=block
 Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
 Content-Security-Policy: default-src 'none'
 Vary: Accept-Encoding, Accept, X-Requested-With
+Content-Encoding: gzip
 Vary: Accept-Encoding
-X-GitHub-Request-Id: E8B4:10138:C1E6B74:E324430:6006F30B
-OkHttp-Sent-Millis: 1611068172957
-OkHttp-Received-Millis: 1611068173181
+X-GitHub-Request-Id: E941:11C4E:BE3E9AC:DF29ED1:6006F3FC
+OkHttp-Sent-Millis: 1611068413926
+OkHttp-Received-Millis: 1611068414242
 
 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 2
