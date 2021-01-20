@@ -17,7 +17,8 @@ public class tratamientojson {
     @Autowired
     FilmRepository PeliculaRepository;
 
-    public void buscarPeliculas() throws IOException {
+    public void CreacionJson() throws IOException {
+        //Obtenemos las peliculas de la base de datos
         List<Film> Peliculas = new ArrayList<Film>();
         PeliculaRepository.findAll().forEach(Pelicula -> Peliculas.add(Pelicula));
         //Creacion del json con la librera gson
