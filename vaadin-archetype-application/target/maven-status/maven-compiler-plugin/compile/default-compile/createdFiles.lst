@@ -5,6 +5,7 @@ vaadinarchetypeapplication/views/editarpelicula/EditarPeliculaView.class
 vaadinarchetypeapplication/data/service/FilmRepository.class
 vaadinarchetypeapplication/Application.class
 vaadinarchetypeapplication/data/AbstractEntity.class
+tratamientojson/tratamientojson.class
 vaadinarchetypeapplication/data/entity/Film.class
 vaadinarchetypeapplication/views/biblioteca/Client.class
 vaadinarchetypeapplication/views/main/MainView.class
