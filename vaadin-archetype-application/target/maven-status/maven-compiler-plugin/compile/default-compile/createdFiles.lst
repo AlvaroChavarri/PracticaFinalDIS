@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 vaadinarchetypeapplication/views/biblioteca/BibliotecaView.class
 vaadinarchetypeapplication/views/formulario/FormularioView.class
 vaadinarchetypeapplication/views/biblioteca/BibliotecaView$BibliotecaViewModel.class
@@ -12,4 +10,3 @@ vaadinarchetypeapplication/data/entity/Film.class
 vaadinarchetypeapplication/views/biblioteca/Client.class
 vaadinarchetypeapplication/views/main/MainView.class
 vaadinarchetypeapplication/data/service/FilmService.class
->>>>>>> main
